@@ -1,0 +1,20 @@
+
+import sys
+
+for m in sys.stdin:  # 第一行 m
+    for x in range(int(m)): # 共 m 行
+        line = input()
+        a, b, c, d = line.split()
+        i = int(b) - int(a)
+        j = int(d) % int(c)
+        if j != 0:
+            x = int(c) - int(b)
+            n = int(d) - int(c)
+            if x == i == n:
+                print(a, b, c, d, int(d) + i)
+        elif j == 0:
+            j = int(d) / int(c)
+            y = int(c) / int(b)
+            k = int(b) / int(a)
+            if j == y == k:
+                print(a, b, c, d, int(d) * int(j))
